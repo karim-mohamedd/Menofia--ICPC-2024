@@ -13,28 +13,23 @@ This contest offers n problems to the participants. For each problem we know, wh
 Help the friends find the number of problems for which they will write a solution.
 
 ***********************************************************************************************************************************************************/
-#include<stdio.h>
+#include <stdio.h>
 
- 
 int main()
 {
-    int n,x,y,z,sum1=0,sum2=0,sum3=0;
+    int n;
+    int a,b,c;
+    int counter = 0;
     
-    scanf("%d",&n);
- 
+    scanf("%d", &n);
+    
     while(n--)
     {
-        scanf("%d%d%d", &x, &y,&z);
-        sum1+=x;
-        sum2+=y;
-        sum3+=z;
-    }
-        if(sum1==0 && sum2==0 && sum3==0)
+        scanf("%d%d%d", &a, &b, &c);             
+        if((a + b + c) >= 2)
         {
-            printf("YES");
+            counter++;
         }
-        else{
-        printf("NO");
-        }
-    return 0;
+    }
+    printf("%d",counter);
 }
