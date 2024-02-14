@@ -11,25 +11,33 @@ Given a lowercase Latin character (letter), check if it appears in the string co
 
 
 #include <stdio.h>
-int main() 
-{
-    
+#include <string.h>
+#include <ctype.h>
+
+int main() {
     int t;
-    char *c;
-    
     scanf("%d", &t);
-    
-    for (int i = 0; i < t; i++)
-    {
-        scanf("%s", &c[i]);
-        if (c[i] == 'c' || c[i] == 'o' || c[i] == 'd' || c[i] == 'e' || c[i] == 'f' || c[i] == 'r' || c[i] == 'e' || c[i] == 's')
-        {
+
+    while (t--) {
+        char c;
+        scanf(" %c", &c);
+
+        char str[] = "codeforces";
+        int len = strlen(str);
+        int found = 0;
+
+        for (int i = 0; i < len; i++) {
+            if (tolower(c) == tolower(str[i])) {
+                found = 1;
+                break;
+            }
+        }
+
+        if (found)
             printf("YES\n");
-        }
         else
-        {
             printf("NO\n");
-        }
     }
+
     return 0;
 }
